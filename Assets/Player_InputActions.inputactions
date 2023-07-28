@@ -1,5 +1,5 @@
 {
-    "name": "PlayerInputActions",
+    "name": "Player_InputActions",
     "maps": [
         {
             "name": "Player",
@@ -27,6 +27,15 @@
                     "name": "Fire",
                     "type": "Button",
                     "id": "69a9e0cf-49a3-4e3a-a04e-744f3b04ec8e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "31879460-e4dd-4e0b-be6f-f471eaab0fda",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -251,6 +260,17 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7da523d5-552e-45e2-ad7f-1b732a3cbd53",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

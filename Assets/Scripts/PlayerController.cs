@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     float moveSpeed = 1f;
     [SerializeField] 
-    ContactFilter2D contactFilter;
+    ContactFilter2D collisionFilter;
     [SerializeField]
     float collisionOffset = .05f;
 
@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
         if (direction == Vector2.zero)
             return false;
 
-        int collisions = rb.Cast(direction, contactFilter, collisionsList, moveSpeed * Time.fixedDeltaTime + collisionOffset);
+        int collisions = rb.Cast(direction, collisionFilter, collisionsList, moveSpeed * Time.fixedDeltaTime + collisionOffset);
         
         if (collisions == 0)
         {
