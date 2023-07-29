@@ -6,17 +6,18 @@ public abstract class Trader : MonoBehaviour
 {
     [Header("Trader Stats")]
     [SerializeField]
-    List<Item> items;
-    [SerializeField]
     protected int gold = 0;
     public int GetGold() => gold;
+
+    [SerializeField]
+    protected List<Item> items;
     Trader otherTrader;
 
     [Header("Trader UI")]
     [SerializeField]
     protected GameObject inventoryPanel;
     [SerializeField]
-    Transform itemGrid;
+    protected Transform itemGrid;
     [SerializeField]
     TMP_Text goldText;
 
@@ -37,6 +38,8 @@ public abstract class Trader : MonoBehaviour
     }
 
     protected void UpdateGold() => goldText.text = gold.ToString() + "g";
+
+    public bool isTrading() => otherTrader;
 
     public virtual void SwitchInventoryVisibility()
     {
@@ -74,10 +77,10 @@ public abstract class Trader : MonoBehaviour
     {
         foreach (Item i in items)
         {
-            i.RemoveItemFromSale();
-            
             if (otherTrader)
                 i.SetItemForSale(this);
+            else
+                i.RemoveItemFromSale();
         }
     }
 
@@ -96,7 +99,7 @@ public abstract class Trader : MonoBehaviour
         item.SetItemForSale(this);
 
         //if (changeGoldVfx)
-        //        Instantiate(changeGoldVfx, GameController.instance.GetPlayerController().transform);
+        //    Instantiate(changeGoldVfx, GameController.instance.GetPlayerController().transform);
 
          return true;
     }
@@ -106,13 +109,8 @@ public abstract class Trader : MonoBehaviour
         if (!otherTrader)
             return;
 
-        if (!otherTrader.BuyItem(item))
-        {
-            Debug.Log(otherTrader.name+" has Insuficient funds for " + item.name);
+        if (!otherTrader.BuyItem(item)) //the other trader doesn't have enough gold to buy this item.
             return;
-        }
-
-        Debug.Log(otherTrader.name + " Bought Item " + item.name);
 
         gold += item.GetPrice();
         UpdateGold();

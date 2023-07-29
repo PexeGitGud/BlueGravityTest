@@ -255,10 +255,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eedcb40f0f308ef468d45693b9eca5c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items:
-  - {fileID: 1859383652479497755, guid: a789321486c390a41bcdce4f537ce85f, type: 3}
   gold: 10
+  items: []
   inventoryPanel: {fileID: 0}
   itemGrid: {fileID: 0}
   goldText: {fileID: 0}
   changeGoldVfx: {fileID: 0}
+  equipedOutfit: {fileID: 0}
+  equipedHair: {fileID: 0}
+  equipedHat: {fileID: 0}
+  outfitEquipmentSlot: {fileID: 0}
+  hairEquipmentSlot: {fileID: 0}
+  hatEquipmentSlot: {fileID: 0}

@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 7504015509413853342}
   - component: {fileID: 2583025345768545699}
   m_Layer: 5
-  m_Name: Item_Image
+  m_Name: ItemImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 7783887913980494162}
   - component: {fileID: 1859383652479497755}
   m_Layer: 5
-  m_Name: 1_Item
+  m_Name: CopperOutfit_Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -267,8 +267,8 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -366,8 +366,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ce76f58b32075044aa73ba11dd8ba5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSprite: {fileID: 21300000, guid: 24726326f0d24dc41875ec34f94e95b2, type: 3}
-  price: 4
+  itemSprite: {fileID: 21300000, guid: ecd359c045351424082d2ba03ec132df, type: 3}
+  price: 2
+  itemType: 0
+  itemVisuals: {fileID: 6077493823455181503, guid: fa0cd76995db6a343a9cf8cad26d5e24, type: 3}
   itemImage: {fileID: 2583025345768545699}
   priceText: {fileID: 3708147006920089296}
   priceSlot: {fileID: 7123841012092862826}
@@ -384,7 +386,7 @@ GameObject:
   - component: {fileID: 5181828409253439663}
   - component: {fileID: 3708147006920089296}
   m_Layer: 5
-  m_Name: Price_Text
+  m_Name: PriceText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -633,12 +633,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba36c97986c36ca48bee7e2d9786e11c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items:
-  - {fileID: 1859383652479497755, guid: 7f1471f68318e0c4e9e0e603d913b617, type: 3}
-  - {fileID: 1859383652479497755, guid: a789321486c390a41bcdce4f537ce85f, type: 3}
-  - {fileID: 1859383652479497755, guid: 7f1471f68318e0c4e9e0e603d913b617, type: 3}
-  - {fileID: 1859383652479497755, guid: a789321486c390a41bcdce4f537ce85f, type: 3}
   gold: 100
+  items:
+  - {fileID: 1859383652479497755, guid: 62e44e3b8d90928489a4092adc2e07e6, type: 3}
+  - {fileID: 1859383652479497755, guid: d36013bb7b832d24f86c58a1d4ccc722, type: 3}
   inventoryPanel: {fileID: 0}
   itemGrid: {fileID: 0}
   goldText: {fileID: 0}
