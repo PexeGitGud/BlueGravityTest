@@ -13,6 +13,7 @@ public class Interactor : MonoBehaviour
 
     void LateUpdate()
     {
+        //Get all the interactables within range and show the interaction bubble.
         interactables = new Collider2D[5];
         interactablesNum = Physics2D.OverlapCircle(transform.position, interactionRadius, interactionFilter, interactables);
 
@@ -20,11 +21,14 @@ public class Interactor : MonoBehaviour
         {
             foreach(Collider2D i in interactables)
             {
-                i?.GetComponent<Interactable>()?.SetDialogueBubbleActive(true, transform);
+                i?.GetComponent<Interactable>()?.SetInteractionBubbleActive(true, transform);
             }
          }
     }
 
+    /// <summary>
+    /// If we press the interaction key and have at least one Interactable within range interact with it, prioritizing the closest to the interactor.
+    /// </summary>
     void OnInteract()
     {
         if (interactablesNum > 0)

@@ -1,11 +1,16 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Interactable : MonoBehaviour
 {
     [SerializeField]
     GameObject dialogueBubble;
     [SerializeField]
-    float interactionRadius = .5f;
+    float interactionRadius = .6f;
+    [SerializeField]
+    UnityEvent interactionEvent;
+    [SerializeField]
+    UnityEvent movingAwayEvent;
 
     Transform interactor;
 
@@ -15,19 +20,25 @@ public class Interactable : MonoBehaviour
         {
             if (Vector2.Distance(transform.position, interactor.position) > interactionRadius)
             {
-                SetDialogueBubbleActive(false, null);
+                MovingAway();
             }
         }
     }
 
     public void Interact()
     {
-        Debug.Log("Interacted");
+        interactionEvent?.Invoke();
     }
 
-    public void SetDialogueBubbleActive(bool value, Transform interactor)
+    public void SetInteractionBubbleActive(bool value, Transform interactor)
     {
         this.interactor = interactor;
         dialogueBubble.SetActive(value);
+    }
+
+    void MovingAway()
+    {
+        SetInteractionBubbleActive(false, null);
+        movingAwayEvent?.Invoke();
     }
 }
