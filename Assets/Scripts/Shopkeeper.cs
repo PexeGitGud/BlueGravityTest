@@ -1,49 +1,28 @@
-using System.Collections.Generic;
-using UnityEngine;
-using static UnityEditor.Progress;
-
-public class Shopkeeper : MonoBehaviour
+public class Shopkeeper : Trader
 {
-    [SerializeField]
-    List<Item> itemsForSale;
-
-    [SerializeField]
-    GameObject shopPanel;
-    [SerializeField]
-    Transform shopGrid;
-
-    void Start()
+    public override void SwitchInventoryVisibility()
     {
-        for (int i = 0; i < itemsForSale.Count; i++)
-        {
-            itemsForSale[i] = Instantiate(itemsForSale[i], shopGrid);
-            itemsForSale[i].SetItemForSale(this);
-        }
+        base.SwitchInventoryVisibility();
+
+        PlayerInventory pi = GameController.instance.GetPlayerInventory();
+        pi?.SetInventoryVisibility(inventoryPanel.activeSelf);
+
+        if (inventoryPanel.activeSelf)
+            StartTrading(pi);
+        else
+            StopTrading();
     }
 
-    public void SwitchShopPanelVisibility()
+    public override void SetInventoryVisibility(bool visibility)
     {
-        shopPanel?.SetActive(!shopPanel.activeSelf);
-    }
+        base.SetInventoryVisibility(visibility);
 
-    public void SetShopPanelVisibility(bool visibility)
-    {
-        shopPanel?.SetActive(visibility);
-    }
+        PlayerInventory pi = GameController.instance.GetPlayerInventory();
+        pi?.SetInventoryVisibility(inventoryPanel.activeSelf);
 
-    public void BuyItem(Item item)
-    {
-        
-        if (!GameController.instance.GetPlayerInventory().BuyItem(item))
-        {
-            Debug.Log("Insuficient funds for " + item.name);
-            return;
-        }
-
-        if (!itemsForSale.Remove(item))
-            return;//error
-
-        Debug.Log("Bought Item " + item.name);
-        Destroy(item.gameObject);
+        if (inventoryPanel.activeSelf)
+            StartTrading(pi);
+        else
+            StopTrading();
     }
 }

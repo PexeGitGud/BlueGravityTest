@@ -132,7 +132,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2103069683}
         m_TargetAssemblyTypeName: Shopkeeper, Assembly-CSharp
-        m_MethodName: SwitchShopPanelVisibility
+        m_MethodName: SwitchInventoryVisibility
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -596,7 +596,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2103069683}
         m_TargetAssemblyTypeName: Shopkeeper, Assembly-CSharp
-        m_MethodName: SwitchShopPanelVisibility
+        m_MethodName: SwitchInventoryVisibility
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -611,7 +611,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2103069683}
         m_TargetAssemblyTypeName: Shopkeeper, Assembly-CSharp
-        m_MethodName: SetShopPanelVisibility
+        m_MethodName: SetInventoryVisibility
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -633,9 +633,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba36c97986c36ca48bee7e2d9786e11c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemsForSale:
+  items:
   - {fileID: 1859383652479497755, guid: 7f1471f68318e0c4e9e0e603d913b617, type: 3}
   - {fileID: 1859383652479497755, guid: a789321486c390a41bcdce4f537ce85f, type: 3}
   - {fileID: 1859383652479497755, guid: 7f1471f68318e0c4e9e0e603d913b617, type: 3}
-  shopPanel: {fileID: 0}
-  shopGrid: {fileID: 0}
+  - {fileID: 1859383652479497755, guid: a789321486c390a41bcdce4f537ce85f, type: 3}
+  gold: 100
+  inventoryPanel: {fileID: 0}
+  itemGrid: {fileID: 0}
+  goldText: {fileID: 0}
+  changeGoldVfx: {fileID: 0}

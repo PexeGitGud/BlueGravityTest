@@ -6,7 +6,7 @@ public class Interactor : MonoBehaviour
     float interactionRadius = 2f;
     [SerializeField]
     ContactFilter2D interactionFilter;
-    [SerializeField]
+
     Collider2D[] interactables;
 
     int interactablesNum = 0;

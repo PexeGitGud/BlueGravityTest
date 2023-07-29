@@ -13,6 +13,9 @@ public class Item : MonoBehaviour
     [SerializeField]
     bool equipable = false;
     public bool IsEquipable() => equipable;
+    Trader owner;
+    public Trader GetTrader() => owner;
+    bool tradable = false;
 
     [Header("UI")]
     [SerializeField]
@@ -28,15 +31,26 @@ public class Item : MonoBehaviour
     {
         itemImage.sprite = itemSprite;
         priceText.text = price.ToString()+"g";
+        SetPriceTagVisibility();
     }
 
-    public void SetItemForSale(Shopkeeper shopkeeper)
+    public void SetItemForSale(Trader newTrader)
     {
-        itemButton.onClick.AddListener(delegate { shopkeeper.BuyItem(this); });
+        owner = newTrader;
+        itemButton.onClick.AddListener(delegate { owner.SellItem(this); });
+        tradable = true;
+        SetPriceTagVisibility();
     }
 
-    public void HidePriceTag()
+    public void RemoveItemFromSale()
     {
-        priceSlot.SetActive(false);
+        itemButton.onClick.RemoveAllListeners();
+        tradable = false;
+        SetPriceTagVisibility();
+    }
+
+    public void SetPriceTagVisibility()
+    {
+        priceSlot.SetActive(tradable);
     }
 }

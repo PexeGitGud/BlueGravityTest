@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 330534975251782538}
   - component: {fileID: 74254719403169263}
   - component: {fileID: 7809751084298383622}
+  - component: {fileID: 1180396353}
   m_Layer: 0
   m_Name: Player_Prefab
   m_TagString: Player
@@ -242,4 +243,22 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  interactables: []
+--- !u!114 &1180396353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6692173819781712102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eedcb40f0f308ef468d45693b9eca5c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 1859383652479497755, guid: a789321486c390a41bcdce4f537ce85f, type: 3}
+  gold: 10
+  inventoryPanel: {fileID: 0}
+  itemGrid: {fileID: 0}
+  goldText: {fileID: 0}
+  changeGoldVfx: {fileID: 0}
