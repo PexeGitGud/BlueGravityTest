@@ -200,6 +200,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4138379f632dde49b91d3a6cd1d9ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animators:
+  - {fileID: 330534975251782538}
   moveSpeed: 0.6
   collisionFilter:
     useTriggers: 0

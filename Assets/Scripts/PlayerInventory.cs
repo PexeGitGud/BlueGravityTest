@@ -1,5 +1,4 @@
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class PlayerInventory : Trader
 {
@@ -90,6 +89,7 @@ public class PlayerInventory : Trader
         oldEquipment = newEquipment;
         RealignEquipmentTransfrom(oldEquipment, parent);
         visual = Instantiate(newEquipment.GetItemVisuals(), transform);
+        SetupEquipmentAnimator(ref visual);
         oldEquipment.Equip(true);
     }
 
@@ -104,5 +104,14 @@ public class PlayerInventory : Trader
             rect.anchorMin = new Vector2(.5f, .5f);
             rect.anchoredPosition = new Vector2(.5f, .5f);
         }
+    }
+
+    void SetupEquipmentAnimator(ref GameObject visual)
+    {
+        PlayerController pc = GameController.instance.GetPlayerController();
+        Animator animator = visual.GetComponent<Animator>();
+        animator.SetFloat("XDir", pc.GetFacingDir().x);
+        animator.SetFloat("YDir", pc.GetFacingDir().y);
+        pc.animators.Add(animator);
     }
 }

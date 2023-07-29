@@ -103,8 +103,8 @@ RectTransform:
   m_GameObject: {fileID: 6393669575739197786}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.25, y: 2.25, z: 2.25}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7123841013591502537}
   m_RootOrder: 0
@@ -366,10 +366,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ce76f58b32075044aa73ba11dd8ba5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSprite: {fileID: 21300020, guid: addd2af175d074643a3b1f29f6c23041, type: 3}
+  itemSprite: {fileID: 430122642, guid: 514e1a486c66b5145ad8f00a370a91a3, type: 3}
   price: 8
   itemType: 0
   itemVisuals: {fileID: 6077493823455181503, guid: 0436207769fed174bb5d9a2169ba9527, type: 3}
+  animator: {fileID: 0}
   itemImage: {fileID: 2583025345768545699}
   priceText: {fileID: 3708147006920089296}
   priceSlot: {fileID: 7123841012092862826}

@@ -25,6 +25,9 @@ public class Item : MonoBehaviour
     [SerializeField]
     GameObject itemVisuals;
     public GameObject GetItemVisuals() => itemVisuals;
+    [SerializeField]
+    Animator animator;
+    public Animator GetAnimator() => animator;
 
     Trader owner;
     public Trader GetTrader() => owner;

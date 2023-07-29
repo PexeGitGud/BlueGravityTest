@@ -5,10 +5,12 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rb;
-    Animator animator;
+    public List<Animator> animators;
     
     Vector2 inputDir;
     Vector2 facingDir;
+    public Vector2 GetFacingDir() => facingDir;
+
     [SerializeField]
     float moveSpeed = 1f;
     [SerializeField] 
@@ -21,7 +23,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -39,17 +40,36 @@ public class PlayerController : MonoBehaviour
                     }
                 }
             }
-            animator.SetBool("Moving", moving);
 
-            if (moving)
+            foreach (Animator a in animators)
             {
-                animator.SetFloat("XDir", inputDir.x);
-                animator.SetFloat("YDir", inputDir.y);
+                if (!a)
+                {
+                    animators.Remove(a);
+                    break;
+                }
+
+                a.SetBool("Moving", moving);
+
+                if (moving)
+                {
+                    a.SetFloat("XDir", inputDir.x);
+                    a.SetFloat("YDir", inputDir.y);
+                }
             }
         }
         else
         {
-            animator.SetBool("Moving", false);
+            foreach (Animator a in animators)
+            {
+                if (!a)
+                {
+                    animators.Remove(a);
+                    break;
+                }
+
+                a.SetBool("Moving", false);
+            }
         }
     }
 

@@ -117,4 +117,10 @@ public abstract class Trader : MonoBehaviour
 
         items.Remove(item);
     }
+
+    public void AddGold(int amount)
+    {
+        gold += amount;
+        UpdateGold();
+    }
 }
